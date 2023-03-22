@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import React from "react";
 
-export default function Product({ data }) {
+export default function Product({ data, addToCart }) {
   const { name, price } = data;
   return (
     <View style={styles.container}>
@@ -9,7 +9,8 @@ export default function Product({ data }) {
         <Text style={styles.title}>{name}</Text>
         <Text>R$ {price.toFixed(2)} </Text>
       </View>
-      <TouchableOpacity style={styles.button}>
+      
+      <TouchableOpacity style={styles.button} onPress={addToCart}>
         <Text>+</Text>
       </TouchableOpacity>
     </View>
